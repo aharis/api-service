@@ -8,8 +8,13 @@ export interface IUser extends Document {
     state: string,
     city: string,
     zipCode: string,
-    checkbox: boolean
+    checkbox: boolean,
 }
+
+export interface IUserMethods {
+    addUser(user: IUser): Promise<any>;
+}
+
     const UserSchema = new Schema({
     username: {
         type: String,
@@ -46,11 +51,8 @@ export interface IUser extends Document {
         default: false
     },
 
-})
+});
 
-export interface IUserMethods {
-    addUser(user: IUser): Promise<any>;
-}
 
 UserSchema.static('addUser', UserRepository.addUser);
 
