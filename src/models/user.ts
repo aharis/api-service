@@ -31,6 +31,7 @@ export interface IUserMethods {
     },
     password: {
         type: String,
+        required: true,
         trim: true,
         unique: true,
     },
