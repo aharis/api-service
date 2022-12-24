@@ -5,6 +5,7 @@ export interface IUser extends Document {
     username: string,
     email: string,
     address: string,
+    password: string,
     state: string,
     city: string,
     zipCode: string,
@@ -12,7 +13,7 @@ export interface IUser extends Document {
 }
 
 export interface IUserMethods {
-    addUser(user: IUser): Promise<any>;
+    addUser(user: IUser): Promise<IUser>;
 }
 
     const UserSchema = new Schema({
@@ -27,6 +28,11 @@ export interface IUserMethods {
         trim: true,
         unique: true,
         lowercase: true,
+    },
+    password: {
+        type: String,
+        trim: true,
+        unique: true,
     },
     address: {
         type: String,
@@ -52,7 +58,6 @@ export interface IUserMethods {
     },
 
 });
-
 
 UserSchema.static('addUser', UserRepository.addUser);
 
