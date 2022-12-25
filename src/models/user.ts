@@ -14,6 +14,7 @@ export interface IUser extends Document {
 
 export interface IUserMethods {
     addUser(user: IUser): Promise<IUser>;
+    getUserByEmail(email: string): Promise<IUser>;
 }
 
     const UserSchema = new Schema({

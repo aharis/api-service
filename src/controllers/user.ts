@@ -24,4 +24,5 @@ export class UserController {
           return errorResponse(response, statuses.server_error, [error as Error]);
         }
       }
+      
 }
