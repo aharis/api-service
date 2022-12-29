@@ -1,10 +1,10 @@
 import { NextFunction, Request, Response } from 'express';
 import { statuses } from '../../config/statuses';
 import { ResponseBuilder } from '../../utils/response';
-import Joi from 'joi'; //or like this import * as Joi from 'joi'
-import { IUser } from '../../utils/interfaces';
-import { UserModelSchema } from '../../models/user';
+import {IUser, UserModelSchema } from '../../models/user';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const Joi = require('joi');
 const usernameJoiObject = Joi.string()
 .regex(/^[\u00C0-\u017Fa-zA-ZćĆčČžŽšŠđĐ][\u00C0-\u017Fa-zA-ZćĆčČžŽšŠđĐ -]+$/)
 .min(3)

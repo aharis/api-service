@@ -14,7 +14,7 @@ export interface IUser extends Document {
 
 export interface IUserMethods {
     addUser(user: IUser): Promise<IUser>;
-    getUserByEmail(email: string): Promise<IUser>;
+    getUserByEmail(email: string): Promise<any>;
 }
 
     const UserSchema = new Schema({
@@ -61,6 +61,7 @@ export interface IUserMethods {
 
 });
 
+UserSchema.static('getUserByEmail', UserRepository.getUserByEmail);
 UserSchema.static('addUser', UserRepository.addUser);
 
 type UserModelSchemaType = Model<IUser> & IUserMethods;
