@@ -10,5 +10,6 @@ router
     FormValidation.validateAddUserForm,
     UserController.addUser,
   )
+  .post('/login', UserController.login)
 
   export default router;
