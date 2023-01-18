@@ -42,7 +42,8 @@ export class UserRepository {
         }
 
         user = {
-          username: userData[0].username,          
+          username: userData[0].username,  
+          role: userData[0].role        
         };
 
         token = await isAuthenticated({ _id: userData[0]._id })
