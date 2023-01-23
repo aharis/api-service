@@ -32,7 +32,6 @@ export class UserController {
         const token = await UserRepository.login(username, password)
         return new ResponseBuilder<any>()
         .setStatus(true)
-
         .setData(token)
         .setResponse(response)
         .setResponseStatus(statuses.success)
