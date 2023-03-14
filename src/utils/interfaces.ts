@@ -23,4 +23,5 @@ export interface IBook {
 
   export interface IBookMethods {
     addBook(book: IBook): Promise<IBook>;
+    getBookById(id: string): Promise<IBook>;
   }

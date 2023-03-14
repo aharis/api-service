@@ -17,4 +17,18 @@ export class BookController {
       return errorResponse(response, statuses.server_error, [error as Error]);
     }
   }
+  public static async getBook(req: Request, response: Response) {
+    try {
+      const { id } = req.body;
+      await BookModelSchema.getBookById(id);
+      return new ResponseBuilder<any>()
+        .setStatus(true)
+        .setData({ message: 'Book succesfully fetched!' })
+        .setResponse(response)
+        .setResponseStatus(statuses.created)
+        .build();
+    } catch (error) {
+      return errorResponse(response, statuses.server_error, [error as Error]);
+    }
+  }
 }
