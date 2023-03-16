@@ -10,7 +10,7 @@ const app = express();
 
 app.use(cors(
     {
-        origin: ['https://client-nej9.onrender.com']
+        origin: ['https://client-4cw7.onrender.com']
     }
 ));
 
